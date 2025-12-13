@@ -62,6 +62,7 @@ const CoreCardList = () => {
         trigger: coreRef.current,
         start: "20% center",
       },
+      duration:0.5,
       stagger: 0.18,
     });
   }, []);
