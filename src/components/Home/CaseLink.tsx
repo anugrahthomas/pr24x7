@@ -1,5 +1,5 @@
 import { Dot } from "lucide-react";
-import { useState } from "react";
+import {Fragment, useState } from "react";
 
 const links: string[] = [
   "View All",
@@ -18,14 +18,13 @@ const CaseLink = () => {
     <div className="pt-8 text-black flex items-center justify-center gap-2">
       {links.map((link, index) => {
         return (
-          <>
+          <Fragment key={index}>
             {index != links.length - 1 ? (
               <>
                 <button
                   className={`${
                     lIndex === index ? "text-orange-400" : ""
                   } tracking-wide cursor-pointer text-sm md:text-md`}
-                  key={index}
                   onClick={() => lHandler(index)}
                 >
                   {link}
@@ -37,13 +36,12 @@ const CaseLink = () => {
                 className={`${
                   lIndex === index ? "text-orange-400" : ""
                 } tracking-wide cursor-pointer text-sm md:text-md`}
-                key={index}
                 onClick={() => lHandler(index)}
               >
                 {link}
               </button>
             )}
-          </>
+          </Fragment>
         );
       })}
     </div>
