@@ -15,11 +15,11 @@ const StairAnimation = ({ children }: { children: ReactNode }) => {
     });
     tl.from(".stair", {
       height: 0,
-      stagger: 0.06,
+      stagger: 0.05,
     });
     tl.to(".stair", {
       y: "-100%",
-      stagger: 0.04,
+      stagger: 0.03,
     });
     tl.to(stairRef.current, {
       display: "none",
