@@ -4,3 +4,31 @@
 body{
     background: #051052;
 }
+
+@layer utilities {
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee 20s linear infinite;
+  }
+
+  /* 🔥 Pause animation on hover */
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-item {
+    @apply flex items-center justify-center px-8 py-4 rounded;
+  }
+
+  .marquee-item img {
+    @apply w-32 h-32 object-contain;
+  }
+}
