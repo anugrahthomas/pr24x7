@@ -84,7 +84,7 @@ const Hero = () => {
       <div className="pl-[6vw] md:w-1/2">
         <h2
           ref={textRef}
-          className="text-7xl md:text-[6vw] uppercase md:leading-28"
+          className="text-5xl md:text-[6vw] uppercase md:leading-[1.2] font-poppins font-light mb-[50px]"
           dangerouslySetInnerHTML={{ __html: html }}
         ></h2>
       </div>

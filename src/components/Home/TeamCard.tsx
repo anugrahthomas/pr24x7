@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useRef } from "react";
 
-const TeamCard = () => {
+const TeamCard = ({ member }: { member: { name: string; role: string; image: string } }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const enterHandler = () => {
     gsap.set(cardRef.current, { display: "block" });
@@ -36,8 +36,8 @@ const TeamCard = () => {
     >
       <img
         className="h-full w-full object-cover group-hover:scale-110 transition-all duration-150 delay-75"
-        src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-        alt=""
+        src={member.image}
+        alt={member.name}
       />
 
       <div
@@ -45,8 +45,8 @@ const TeamCard = () => {
         className="absolute hidden top-0 bg-[#051052]/50 backdrop-blur-xs h-full w-full "
       >
         <div className="h-full w-full flex flex-col items-center justify-center">
-          <h2 className="text-white text-4xl">Suraj Pandey</h2>
-          <p className="text-white text-md font-normal">CEO</p>
+          <h2 className="text-white text-4xl">{member.name}</h2>
+          <p className="text-white text-md font-normal">{member.role}</p>
         </div>
       </div>
     </div>

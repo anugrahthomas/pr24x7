@@ -6,10 +6,12 @@ import { BrowserRouter } from "react-router-dom";
 import StairAnimation from "./components/common/StairAnimation.tsx";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer.tsx";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <StairAnimation>
         <Header />
         <App />
